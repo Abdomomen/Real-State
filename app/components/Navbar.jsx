@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Menu, User, LogOut, LayoutDashboard, Bookmark } from "lucide-react";
+import { Menu, User, LogOut, LayoutDashboard, Bookmark, Search } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import useUserStore from "@/app/stores/userStore";
@@ -66,6 +66,11 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-6 pointer-events-auto">
+        {/* Search Icon */}
+        <Link href="/search" className={`transition-colors ${textMuted}`}>
+          <Search size={18} />
+        </Link>
+
         {/* Wishlist Icon with Badge */}
         <Link href="/wishlist" className={`relative transition-colors ${textMuted}`}>
           <Bookmark size={18} />
