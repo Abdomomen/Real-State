@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
+@theme {
+  --color-eggshell: #F8F5F2; /* Slightly warmer cream for printing feel */
+  --color-charcoal: #1A1A1A;
+  
+  /* Classic Luxury Real Estate Palette */
+  --color-forest: #052c1a;
+  --color-forest-dark: #031c10;
+  --color-navy: #0a192f;
+  --color-gold: #c5a065;
+  --color-gold-light: #d4b584;
+  --color-luxury-gold: #c5a065;
+  --color-cream: #f5eeda;
+
+  --color-border-light: #E5E5E5;
+
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5eeda; /* Default Cream */
+  --foreground: #052c1a; /* Forest text */
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Heritage Noise Texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: -0.01em;
+}
+
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.luxury-border {
+  border: 1px solid var(--color-gold);
+}
+
+.luxury-panel {
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+  border: 1px solid var(--color-gold);
 }
