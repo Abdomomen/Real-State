@@ -1,6 +1,7 @@
 import ConnectDB from "@/app/lib/db";
 import Comment from "@/app/lib/models/comments";
 import Building from "@/app/lib/models/buildings";
+import User from "@/app/lib/models/user";
 import { AppError } from "@/app/lib/errors";
 
 const CommentReal = Comment;

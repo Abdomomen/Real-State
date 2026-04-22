@@ -4,6 +4,7 @@ import { AppError } from "@/app/lib/errors";
 import { uploadImg, deleteImage } from "@/app/lib/cloud";
 import Likes from "@/app/lib/models/likes";
 import Comments from "@/app/lib/models/comments";
+import User from "@/app/lib/models/user";
 import crypto from "crypto";
 
 const CommentReal = Comments;
