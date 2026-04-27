@@ -24,18 +24,28 @@ const LoginPage = () => {
     setLoading(true);
     setError("");
 
-    const result = await apiClient.post("/api/auth/login", { email, password });
+    try {
+      const result = await apiClient.post("/api/auth/login", { email, password });
 
-    if (result.error) {
-      setError(result.message);
-      showToast(result.message, "error");
+      if (result.error) {
+        setError(result.message);
+        showToast(result.message, "error");
+        setLoading(false);
+      } else {
+        // Success
+        setUser(result.user);
+        showToast("Access Granted. Welcome back.");
+        router.push("/");
+        router.refresh(); // Refresh to update server components
+        setLoading(false);
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("An unexpected error occurred. Please try again.");
+      showToast("An unexpected error occurred", "error");
       setLoading(false);
-    } else {
-      // Success
-      setUser(result.user);
-      showToast("Access Granted. Welcome back.");
-      router.push("/");
-      router.refresh(); // Refresh to update server components
+    } finally {
+      setLoading(false);
     }
   };
 

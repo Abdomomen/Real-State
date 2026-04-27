@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import useUserStore from "@/app/stores/userStore";
 const RegisterPage = () => {
   const router = useRouter();
-  const setUser = useUserStore((state) => state.setUser);
+  const setUser = useUserStore((state) => state.login);
   const { showToast } = useToast();
   
   const [firstName, setFirstName] = useState("");
@@ -26,19 +26,29 @@ const RegisterPage = () => {
     setLoading(true);
     setError("");
 
-    const name = `${firstName} ${lastName}`.trim();
-    const result = await apiClient.post("/api/auth/register", { name, email, password });
+    try {
+      const name = `${firstName} ${lastName}`.trim();
+      const result = await apiClient.post("/api/auth/register", { name, email, password });
 
-    if (result.error) {
-      setError(result.message);
-      showToast(result.message, "error");
+      if (result.error) {
+        setError(result.message);
+        showToast(result.message, "error");
+        setLoading(false);
+      } else {
+        // Success - user is auto-logged in by the backend issuing cookies
+        setUser(result.user);
+        showToast("Council Membership Confirmed. Welcome.");
+        router.push("/");
+        router.refresh();
+        setLoading(false); // Add this to stop infinite loading
+      }
+    } catch (err) {
+      console.error("Registration error:", err);
+      setError("An unexpected error occurred. Please try again.");
+      showToast("An unexpected error occurred", "error");
       setLoading(false);
-    } else {
-      // Success - user is auto-logged in by the backend issuing cookies
-      setUser(result.user);
-      showToast("Council Membership Confirmed. Welcome.");
-      router.push("/");
-      router.refresh();
+    } finally {
+      setLoading(false); // Ensure loading is off
     }
   };
   return (
