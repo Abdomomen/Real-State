@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, User, LogOut, LayoutDashboard, Bookmark, Search, X } from "lucide-react";
 import Link from "next/link";
