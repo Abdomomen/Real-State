@@ -54,7 +54,7 @@ export default function WishList() {
                                 building.images?.[0]?.url ||
                                 building.images?.[0] ||
                                 building.mainImage ||
-                                "https://images.unsplash.com/photo-1600607687940-4e2303c9574a?auto=format&fit=crop&q=80&w=800";
+                                "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg";
 
                             const categorySlug =
                                 building.category?.slug ||

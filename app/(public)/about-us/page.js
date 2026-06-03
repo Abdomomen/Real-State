@@ -24,7 +24,7 @@ export default function AboutUsPage() {
           </div>
           <div className="relative h-[600px] luxury-border overflow-hidden ring-1 ring-gold/20">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200"
+              src="https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg"
               alt="Luxury Estate Heritage"
               className="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-1000"
             />
@@ -72,7 +72,7 @@ export default function AboutUsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 relative h-[700px] luxury-border">
              <img
-              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200"
+              src="https://res.cloudinary.com/doq3eivyt/image/upload/v1780529754/vivid-estates/about_main.jpg"
               alt="Founder Portrait"
               className="w-full h-full object-cover grayscale"
             />

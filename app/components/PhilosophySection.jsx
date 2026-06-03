@@ -15,7 +15,7 @@ const PhilosophySection = () => {
           className="flex-1 relative aspect-[4/5] w-full"
         >
           <img 
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25114c?auto=format&fit=crop&q=80&w=1200" 
+            src="https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg"
             alt="Architectural details" 
             className="w-full h-full object-cover rounded-sm grayscale-[10%]"
           />

@@ -45,7 +45,7 @@ export async function POST(req) {
         const newRefreshToken = await generateRefreshToken({ id: user._id, email: user.email, role: user.role });
 
         const response = NextResponse.json(
-            { success: true, user: { id: user._id, email: user.email, role: user.role } },
+            { success: true },
             { status: 200 }
         );
 

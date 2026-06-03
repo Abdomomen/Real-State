@@ -9,7 +9,7 @@ export default function PropertyCard({ property, index }) {
   const price = typeof property.price === 'number' 
     ? `$${property.price.toLocaleString()}` 
     : property.price;
-  const image = (property.images && property.images.length > 0) ? property.images[0].url : property.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800";
+  const image = (property.images && property.images.length > 0) ? property.images[0].url : property.image || "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg";
   const location = `${property.city || ''}${property.city && property.state ? ', ' : ''}${property.state || ''}` || property.location;
   const beds = property.bedrooms || property.beds;
   const baths = property.bathrooms || property.baths;

@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import useUserStore from "@/app/stores/userStore";
 import { LogIn, UserPlus, LayoutDashboard, Building2 } from "lucide-react";
 
-const Hero = () => {
-  const { user } = useUserStore();
+const Hero = ({user}) => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-eggshell">
@@ -16,7 +14,7 @@ const Hero = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=2400"
+          src="https://res.cloudinary.com/doq3eivyt/image/upload/v1780529738/vivid-estates/hero_main.jpg"
           alt="Luxury Architecture"
           className="w-full h-full object-cover grayscale-[20%]"
         />

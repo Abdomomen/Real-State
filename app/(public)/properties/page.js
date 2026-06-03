@@ -10,11 +10,11 @@ export default async function Properties() {
     return redirect("/login");
   }
   const categories = [
-    { _id: '1', name: 'apartment', displayName: 'Apartments', description: 'Modern living spaces in the heart of the city.', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=2400' },
-    { _id: '2', name: 'house', displayName: 'Houses & Villas', description: 'Spacious properties with private amenities.', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2400' },
-    { _id: '3', name: 'office', displayName: 'Private Offices', description: 'Premium corporate spaces for your business.', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400' },
-    { _id: '4', name: 'shop', displayName: 'Retail Spaces', description: 'Prime commercial properties for retail.', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2400' },
-    { _id: '5', name: 'land', displayName: 'Exclusive Lands', description: 'Build your dream on our exclusive plots.', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2400' }
+    { _id: '1', name: 'apartment', displayName: 'Apartments', description: 'Modern living spaces in the heart of the city.', image: 'https://res.cloudinary.com/doq3eivyt/image/upload/v1780529746/vivid-estates/apartment_category.jpg' },
+    { _id: '2', name: 'house', displayName: 'Houses & Villas', description: 'Spacious properties with private amenities.', image: 'https://res.cloudinary.com/doq3eivyt/image/upload/v1780529748/vivid-estates/house_category.jpg' },
+    { _id: '3', name: 'office', displayName: 'Private Offices', description: 'Premium corporate spaces for your business.', image: 'https://res.cloudinary.com/doq3eivyt/image/upload/v1780529749/vivid-estates/office_category.jpg' },
+    { _id: '4', name: 'shop', displayName: 'Retail Spaces', description: 'Prime commercial properties for retail.', image: 'https://res.cloudinary.com/doq3eivyt/image/upload/v1780529751/vivid-estates/shop_category.jpg' },
+    { _id: '5', name: 'land', displayName: 'Exclusive Lands', description: 'Build your dream on our exclusive plots.', image: 'https://res.cloudinary.com/doq3eivyt/image/upload/v1780529752/vivid-estates/land_category.jpg' }
   ];
   
   return (

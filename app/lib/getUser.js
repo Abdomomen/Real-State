@@ -14,7 +14,6 @@ export default async function getUser() {
         return {
             id: actualId,
             _id: actualId,
-            // Fix: added name field so layout/dashboard header display correctly
             name: user.name || user.username || null,
             email: user.email,
             role: user.role || 'user'
@@ -23,4 +22,5 @@ export default async function getUser() {
         console.error("Auth Error:", error);
         return null;
     }
-}
+}
+

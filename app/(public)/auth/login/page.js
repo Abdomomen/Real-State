@@ -11,7 +11,6 @@ import useUserStore from "@/app/stores/userStore"
 
 const LoginPage = () => {
   const router = useRouter();
-  const setUser = useUserStore((state) => state.login);
   const { showToast } = useToast();
   
   const [email, setEmail] = useState("");
@@ -33,7 +32,6 @@ const LoginPage = () => {
         setLoading(false);
       } else {
         // Success
-        setUser(result.user);
         showToast("Access Granted. Welcome back.");
         router.push("/");
         router.refresh(); // Refresh to update server components
@@ -57,7 +55,7 @@ const LoginPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
-          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1200" 
+          src="https://res.cloudinary.com/doq3eivyt/image/upload/v1780529738/vivid-estates/hero_main.jpg"
           alt="Luxury Interior" 
           className="w-full h-full object-cover grayscale-[10%]"
         />

@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server";
 import { buildingService } from "@/app/services/buildingService";
-import { validateApiRequest } from "@/app/lib/api-helpers";
+import { validateApiRequest, refreshTokenHelper } from "@/app/lib/api-helpers";
 import { AppError } from "@/app/lib/errors";
 
 export async function GET(req) {
     try {
         const { error, response } = await validateApiRequest(req);
-        if (error) return response;
-
-        const buildings = await buildingService.getRecent(10);
+        if(error) return response
+        const buildings = await buildingService.getRecentBuildings(10);
 
         return NextResponse.json(
             { success: true, buildings },

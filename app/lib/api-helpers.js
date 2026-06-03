@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import ConnectDB from "@/app/lib/db";
 import User from "@/app/lib/models/user";
 import mongoose from "mongoose";
-import { verifyToken } from "@/app/lib/jwt";
+import { verifyToken,generateToken,generateRefreshToken } from "@/app/lib/jwt";
 
 /**
  * Validates the API request by connecting to DB, checking the token,
@@ -13,10 +13,10 @@ import { verifyToken } from "@/app/lib/jwt";
  * @param {boolean} options.requireAdmin - Whether admin role is required
  * @returns {Promise<{user: Object, decoded: Object, response?: NextResponse}>}
  */
+
 export async function validateApiRequest(req, { requireAdmin = false } = {}) {
     try {
         await ConnectDB();
-
         let token = req.headers.get("authorization") || req.headers.get("Authorization");
         
         if (!token) {
@@ -24,7 +24,6 @@ export async function validateApiRequest(req, { requireAdmin = false } = {}) {
         } else {
             token = token.split(" ")[1];
         }
-
         if (!token) {
             return { 
                 error: true, 
@@ -73,3 +72,5 @@ export async function validateApiRequest(req, { requireAdmin = false } = {}) {
         };
     }
 }
+
+// helper to refresh token once it expired

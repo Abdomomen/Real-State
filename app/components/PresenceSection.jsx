@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 const PresenceSection = () => {
   const locations = [
-    { city: "Madrid", img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&q=80&w=800" },
-    { city: "London", img: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?auto=format&fit=crop&q=80&w=800" },
-    { city: "New York", img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=800" }
+    { city: "Madrid", img: "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529742/vivid-estates/madrid_city.jpg" },
+    { city: "London", img: "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529743/vivid-estates/london_city.jpg" },
+    { city: "New York", img: "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529744/vivid-estates/newyork_city.jpg" }
   ];
 
 

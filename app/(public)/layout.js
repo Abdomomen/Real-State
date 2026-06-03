@@ -1,9 +1,10 @@
 import Navbar from "../components/Navbar";
-
-export default function PublicLayout({ children }) {
+import getUser from "../lib/getUser";
+export default async function PublicLayout({ children }) {
+  let user = await getUser();
   return (
     <main className="min-h-screen bg-eggshell overflow-x-hidden">
-      <Navbar />
+      <Navbar user={user} />
       
       {children}
 

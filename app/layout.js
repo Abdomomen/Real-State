@@ -1,6 +1,6 @@
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-
+import getUser from "./lib/getUser";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -21,7 +21,8 @@ export const metadata = {
 import { ToastProvider } from "./components/ToastProvider";
 import { UserStoreProvider } from "./stores/userStore";
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let user = await getUser();
   return (
     <html
       lang="en"

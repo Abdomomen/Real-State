@@ -11,8 +11,6 @@ const createUserStore = () => {
             (set) => ({
                 // Initial state
                 wishList: [],
-                user: null,
-
                 // Actions
                 addToWishList: (building) => set((state) => {
                     if (state.wishList.find((item) => item._id === building._id)) {
@@ -25,8 +23,6 @@ const createUserStore = () => {
                     return { wishList: state.wishList.filter((item) => item._id !== building._id) };
                 }),
                 
-                login: (userData) => set({ user: userData }),
-                logout: () => set({ user: null }),
             }),
             {
                 name: "user-store",

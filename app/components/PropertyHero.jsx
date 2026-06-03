@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
 const PropertyHero = ({ building }) => {
-  const image = (building.images && building.images.length > 0) ? building.images[0].url : (building.mainImage || "https://images.unsplash.com/photo-1600607687940-4e2303c9574a?auto=format&fit=crop&q=80&w=2400");
+  const image = (building.images && building.images.length > 0) ? building.images[0].url : (building.mainImage || "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg");
   const location = `${building.city}, ${building.state}`;
   const priceDisplay = typeof building.price === 'number' 
     ? `$${building.price.toLocaleString()}` 

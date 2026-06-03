@@ -94,7 +94,7 @@ export default async function PropertyDetail({ params }) {
                             <h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-gold">Visual Portfolio</h2>
                             <div className="columns-1 md:columns-2 gap-8 space-y-8">
                                 {building.images && building.images.length > 0 ? building.images.map((img, idx) => {
-                                    const imgSrc = typeof img === 'string' ? img : (img.url || img.public_id || "https://images.unsplash.com/photo-1600607687940-4e2303c9574a?auto=format&fit=crop&q=80&w=2400");
+                                    const imgSrc = typeof img === 'string' ? img : (img.url || img.public_id || "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg");
                                     return (
                                         <div key={img.id || idx} className="luxury-border overflow-hidden bg-forest/5">
                                             <img 
@@ -107,7 +107,7 @@ export default async function PropertyDetail({ params }) {
                                 }) : (
                                     <div className="luxury-border overflow-hidden bg-forest/5">
                                         <img 
-                                            src={building.mainImage || "https://images.unsplash.com/photo-1600607687940-4e2303c9574a?auto=format&fit=crop&q=80&w=2400"} 
+                                            src={building.mainImage || "https://res.cloudinary.com/doq3eivyt/image/upload/v1780529740/vivid-estates/luxury_interior.jpg"}
                                             alt={`${building.title || building.name} main view`}
                                             className="w-full h-auto hover:scale-105 transition-transform duration-1000 object-cover"
                                         />
@@ -148,7 +148,7 @@ export default async function PropertyDetail({ params }) {
 
                     {/* Right Column: Inquiry & Quick info */}
                     <div className="lg:col-span-1 space-y-12">
-                        <InquiryForm buildingId={building._id} />
+                        <InquiryForm buildingId={building._id} user={user} />
                         
                         <div className="p-10 luxury-panel">
                             <h3 className="text-xl font-serif mb-6 italic">Exclusivity Guaranteed</h3>

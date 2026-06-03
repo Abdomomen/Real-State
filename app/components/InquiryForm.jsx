@@ -3,11 +3,9 @@ import { useState, useEffect } from "react";
 import { Heart, Share2 } from "lucide-react";
 import { useToast } from "@/app/components/ToastProvider";
 import { apiClient } from "@/app/lib/api-client";
-import useUserStore from "@/app/stores/userStore";
 
-const InquiryForm = ({ buildingId }) => {
+const InquiryForm = ({ buildingId, user }) => {
   const { showToast } = useToast();
-  const user = useUserStore((state) => state.user);
   
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);

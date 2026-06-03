@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import useUserStore from "@/app/stores/userStore";
 const RegisterPage = () => {
   const router = useRouter();
-  const setUser = useUserStore((state) => state.login);
   const { showToast } = useToast();
   
   const [firstName, setFirstName] = useState("");
@@ -36,7 +35,6 @@ const RegisterPage = () => {
         setLoading(false);
       } else {
         // Success - user is auto-logged in by the backend issuing cookies
-        setUser(result.user);
         showToast("Council Membership Confirmed. Welcome.");
         router.push("/");
         router.refresh();
@@ -158,7 +156,7 @@ const RegisterPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
-          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200" 
+          src="https://res.cloudinary.com/doq3eivyt/image/upload/v1780529753/vivid-estates/register_hero.jpg"
           alt="Luxury Architecture" 
           className="w-full h-full object-cover grayscale-[10%]"
         />

@@ -3,12 +3,10 @@
 import { LayoutDashboard, Building2, Users, MessageSquare, LogOut, Settings, Bell, Search } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import useUserStore from "@/app/stores/userStore";
 
 const DashboardSidebar = ({ user }) => {
   const pathname = usePathname();
   const router = useRouter();
-  const clearUser = useUserStore((state) => state.logout);
 
   const menuItems = [
     { name: "Overview", icon: LayoutDashboard, path: "/dashboard" },
@@ -20,7 +18,6 @@ const DashboardSidebar = ({ user }) => {
   const handleLogout = async () => {
     try {
       await fetch("/api/auth/logout", { method: "POST" });
-      clearUser();
       router.push("/");
       router.refresh(); // Ensure RSC layout updates
     } catch (error) {

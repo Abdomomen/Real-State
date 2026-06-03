@@ -4,8 +4,9 @@ import PresenceSection from "@/app/components/PresenceSection";
 import PropertyCard from "@/app/components/PropertyCard";
 import { buildingService } from "@/app/services/buildingService";
 import Link from "next/link";
-
+import getUser from "@/app/lib/getUser";
 export default async function LandingPage() {
+  let user = await getUser();
   let buildings = [];
   try {
     buildings = await buildingService.getRecentBuildings(6);
@@ -16,7 +17,7 @@ export default async function LandingPage() {
   return (
     <main className="bg-eggshell">
       {/* 1. High-End Video/Image Hero */}
-      <Hero />
+      <Hero user={user} />
 
       {/* 2. Philosophy & Brand Essence */}
       <PhilosophySection />

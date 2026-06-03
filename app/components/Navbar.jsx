@@ -6,13 +6,12 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import useUserStore from "@/app/stores/userStore";
-
-const Navbar = () => {
-  const { user, logout, wishList } = useUserStore();
+import { apiClient } from "../lib/api-client";
+const Navbar = ({user}) => {
+  const { wishList } = useUserStore();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -20,9 +19,12 @@ const Navbar = () => {
   if (pathname?.startsWith("/auth")) return null;
 
   const handleLogout = async () => {
-    logout();
-    setIsOpen(false);
-    router.push("/");
+    let req= await apiClient.post("api/auth/logout")
+    if(req.success){
+      setIsOpen(false);
+      router.replace("/");
+      router.refresh()
+    }
   };
 
   const navBg = "bg-cream border-b border-gold/10 py-6";
